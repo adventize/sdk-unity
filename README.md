@@ -2,7 +2,7 @@
 
 To integrate your Unity app with Adventize services you'll need to go to [adventize.com](https://adventize.com) and create Adventize application for every platform you'll compiled your app to. Each Adventize application has a pair `appId`/`secret` which will need you in integration process.
 
-Then download [adventize-sdk.unitypackage](https://github.com/adventize/sdk-unity/raw/master/adventize-sdk.unitypackage). Package contains following items:
+Then download [adventize-unity-sdk.tar.gz](https://github.com/adventize/sdk-unity/raw/master/adventize-unity-sdk.tar.gz). In archive you'll find a file `adventize-sdk.unitypackage`. Package contains following items:
   <br/>&nbsp;&nbsp;&nbsp;&nbsp;`AdventizeSDK` -- Adventize SDK class
   <br/>&nbsp;&nbsp;&nbsp;&nbsp;`Plugins/Android` -- Android related libraries
   <br/>&nbsp;&nbsp;&nbsp;&nbsp;`Plugins/iOS` -- iOS related libraries
@@ -81,17 +81,16 @@ To become "Publisher" your application must correctly fetch advertisement data f
 
 ### iOS troubleshooting
 
-As some versions of Unity have troubles with generating proper Xcode project - you should fix them manualy in some cases. The thing is Unity doesn't turning on Objective-C Exceptions. To fix it go to:
+As some versions of Unity have troubles with generating proper Xcode project - you should fix them manualy in some cases. The thing is Unity doesn't turn on Objective-C Exceptions. To turn in on go to:
 
     Project Navigator > Unity-iPhone (target) -> build settings -> Enable Objective-C Exceptions
 
 Adventize Unity SDK also uses some specific Frameworks, which are not included in Unity Xcode default generated project. So, after opening generated Xcode project you should add some Frameworks to it:
 
     Unity-iPhone -> Unity-iPhone (target) -> Build Phases -> Link Binary With Libraries
-
 Add `AdSupport`, `libz.dylib`, `CoreData`.
 
-### Android troubleshooting
+###Android troubleshooting
 
 Add these permissions to AndroidManifest.xml file if you don't have it already:
 
